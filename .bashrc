@@ -118,5 +118,7 @@ else
     eval $(dircolors)
 fi
 
-alias apt='sudo apt'
+alias apt='sudo apt -y'
 alias docker='sudo docker'
+alias ll='ls -l --color'
+alias la='ls -a --color'
