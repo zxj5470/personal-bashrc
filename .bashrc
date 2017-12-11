@@ -117,3 +117,6 @@ if [[ ("$TERM" = *256color || "$TERM" = screen* || "$TERM" = xterm* ) && -f /etc
 else
     eval $(dircolors)
 fi
+
+alias apt ='sudo apt'
+alias docker = 'sudo docker'
