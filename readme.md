@@ -1,14 +1,16 @@
 # Personal-bashrc
 > it contains .bashrc .xinputrc
 
+> Why git is so hard to learn ?
+
 ## usage
 ```bash
-cd ~ 
-git init
-git remote add origin git@github.com:zxj5470/personal-bashrc.git
-# git remote add origin https://github.com/zxj5470/personal-bashrc.git
-git clean
-git reset origin/master
+git clone https://github.com/zxj5470/personal-bashrc.git
+# git clone git@github.com:zxj5470/personal-bashrc.git
+cd personal-bashrc
+cp .bashrc ~
+cp .inputrc ~
+source ~/.bashrc
 ```
 
 

@@ -122,6 +122,7 @@ alias apt='sudo apt -y'
 alias docker='sudo docker'
 alias ll='ls -l --color'
 alias la='ls -a --color'
+alias lla='ls -la --color'
 alias cdgit='cd /media/zh/SharedFiles/git'
 alias dkrm='sudo docker stop $(sudo docker ps -aq)&& sudo docker rm $(sudo docker ps -aq)'
 
