@@ -222,3 +222,4 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+CASE_SENSITIVE="false"
