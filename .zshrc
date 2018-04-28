@@ -1,45 +1,10 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
+source ~/.bashrc
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+DISABLE_AUTO_UPDATE="true"
 
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 # Antigen: https://github.com/zsh-users/antigen
 ANTIGEN="$HOME/.local/bin/antigen.zsh"
-
 # Install antigen.zsh if not exist
 if [ ! -f "$ANTIGEN" ]; then
 	echo "Installing antigen ..."
@@ -65,68 +30,23 @@ if [ ! -f "$ANTIGEN" ]; then
 	mv "$TMPFILE" "$ANTIGEN"
 fi
 
-
 # Enable 256 color to make auto-suggestions look nice
 export TERM="xterm-256color"
-
-
-# Load local bash/zsh compatible settings
-_INIT_SH_NOFUN=1
-[ -f "$HOME/.local/etc/init.sh" ] && source "$HOME/.local/etc/init.sh"
-
-# exit for non-interactive shell
 [[ $- != *i* ]] && return
 
-# WSL (aka Bash for Windows) doesn't work well with BG_NICE
-[ -d "/mnt/c" ] && [[ "$(uname -a)" == *Microsoft* ]] && unsetopt BG_NICE
-
-
-# Initialize antigen
 source "$ANTIGEN"
-
-
-# Initialize oh-my-zsh
 antigen use oh-my-zsh
-
-# default bundles
-# visit https://github.com/unixorn/awesome-zsh-plugins
-# antigen bundle git
-# antigen bundle heroku
 antigen bundle pip
-antigen bundle svn-fast-info
-# antigen bundle command-not-find
-
-antigen bundle colorize
-antigen bundle github
-antigen bundle python
-antigen bundle rupa/z z.sh
-# antigen bundle z
+antigen bundle git
+antigen bundle adb
 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
-# antigen bundle supercrabtree/k
-antigen bundle Vifon/deer
-
-antigen bundle willghatch/zsh-cdr
-# antigen bundle zsh-users/zaw
-
-# uncomment the line below to enable theme
-# antigen theme fishy
-
-
-# check login shell
-if [[ -o login ]]; then
-	[ -f "$HOME/.local/etc/login.sh" ] && source "$HOME/.local/etc/login.sh"
-	[ -f "$HOME/.local/etc/login.zsh" ] && source "$HOME/.local/etc/login.zsh"
-fi
 
 # syntax color definition
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 typeset -A ZSH_HIGHLIGHT_STYLES
-
-# ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
-# ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
 
 ZSH_HIGHLIGHT_STYLES[default]=none
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
@@ -150,45 +70,9 @@ ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=009
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
 ZSH_HIGHLIGHT_STYLES[assign]=none
 
-# load local config
-[ -f "$HOME/.local/etc/config.zsh" ] && source "$HOME/.local/etc/config.zsh" 
-[ -f "$HOME/.local/etc/local.zsh" ] && source "$HOME/.local/etc/local.zsh"
-
-# enable syntax highlighting
 antigen bundle zsh-users/zsh-syntax-highlighting
-
 antigen apply
 
-# setup for deer
-autoload -U deer
-zle -N deer
-
-# default keymap
-bindkey -s '\ee' 'vim\n'
-bindkey '\eh' backward-char
-bindkey '\el' forward-char
-bindkey '\ej' down-line-or-history
-bindkey '\ek' up-line-or-history
-# bindkey '\eu' undo
-bindkey '\eH' backward-word
-bindkey '\eL' forward-word
-bindkey '\eJ' beginning-of-line
-bindkey '\eK' end-of-line
-
-bindkey -s '\eo' 'cd ..\n'
-bindkey -s '\e;' 'll\n'
-
-bindkey '\e[1;3D' backward-word
-bindkey '\e[1;3C' forward-word
-bindkey '\e[1;3A' beginning-of-line
-bindkey '\e[1;3B' end-of-line
-
-bindkey '\ev' deer
-
-alias ll='ls -l'
-
-
-# options
 unsetopt correct_all
 
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
@@ -203,17 +87,9 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY # Don't execute immediately upon history expansion.
 
-
-# source function.sh if it exists
-[ -f "$HOME/.local/etc/function.sh" ] && . "$HOME/.local/etc/function.sh"
-
-
-
-
 # ignore complition
 zstyle ':completion:*:complete:-command-:*:*' ignored-patterns '*.pdf|*.exe|*.dll'
 zstyle ':completion:*:*sh:*:' tag-order files
-
 
 ZSH_THEME="candy"
 
