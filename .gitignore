@@ -2,4 +2,5 @@
 !.gitignore
 !.bashrc
 !.inputrc
-!.readme.md
+!readme.md
+!light.icls

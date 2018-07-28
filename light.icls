@@ -1,0 +1,50 @@
+<scheme name="Default" version="142" parent_scheme="Default">
+  <metaInfo>
+    <property name="created">2018-07-28T16:33:43</property>
+    <property name="ide">Idea</property>
+    <property name="ideVersion">2018.2.0.0</property>
+    <property name="modified">2018-07-28T16:33:55</property>
+    <property name="originalScheme">_@user_Default</property>
+  </metaInfo>
+  <attributes>
+    <option name="DEFAULT_CLASS_NAME">
+      <value>
+        <option name="FOREGROUND" value="6f9bec" />
+      </value>
+    </option>
+    <option name="DEFAULT_INTERFACE_NAME">
+      <value>
+        <option name="FOREGROUND" value="77a88a" />
+      </value>
+    </option>
+    <option name="DEFAULT_KEYWORD">
+      <value>
+        <option name="FOREGROUND" value="db" />
+        <option name="FONT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="KOTLIN_ABSTRACT_CLASS">
+      <value>
+        <option name="FOREGROUND" value="69cab3" />
+      </value>
+    </option>
+    <option name="KOTLIN_BUILTIN_ANNOTATION">
+      <value>
+        <option name="FOREGROUND" value="db" />
+        <option name="FONT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="KOTLIN_EXTENSION_FUNCTION_CALL">
+      <value>
+        <option name="FOREGROUND" value="f58c46" />
+        <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
+    <option name="TEXT">
+      <value>
+        <option name="FOREGROUND" value="0" />
+        <option name="BACKGROUND" value="e1f6ff" />
+      </value>
+    </option>
+  </attributes>
+</scheme>
